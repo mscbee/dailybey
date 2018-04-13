@@ -1,1 +1,3 @@
-# django-rest
+# Daily Bey
+
+#### Work in progress ...
