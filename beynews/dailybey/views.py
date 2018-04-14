@@ -22,7 +22,7 @@ def list_all_articles(request):
         return JsonResponse(serializer.errors, status=400)
 
 @csrf_exempt
-def single_article_detail(request, pk):
+def list_single_article_detail(request, pk):
     """
     Retrieve, update or delete a code snippet.
     """

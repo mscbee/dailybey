@@ -24,5 +24,6 @@ class ArticleSerializer(serializers.Serializer):
         instance.time = validated_data.get('time', instance.time)
         #instance.image = validated_data.get('image', instance.image)
         instance.body = validated_data.get('body', instance.body)
+        instance.url = validated_data.get('url', instance.url)
         instance.save()
         return instance
