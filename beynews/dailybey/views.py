@@ -22,12 +22,12 @@ def list_all_articles(request):
         return JsonResponse(serializer.errors, status=400)
 
 @csrf_exempt
-def list_single_article_detail(request, pk):
+def list_single_article_detail(request, id):
     """
     Retrieve, update or delete a code snippet.
     """
     try:
-        single_article = Article.objects.get(pk=pk)
+        single_article = Article.objects.get(id=id)
     except Article.DoesNotExist:
         return HttpResponse(status=404)
 

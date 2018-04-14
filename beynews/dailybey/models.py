@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Article(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     date =  models.DateField(auto_now_add=True, blank=True, null=True)
     time = models.TimeField(auto_now_add=True, blank=True, null=True)

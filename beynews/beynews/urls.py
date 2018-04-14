@@ -14,12 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from dailybey import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('articles/', views.list_all_articles, name='articles'),
-
-    # TODO: figure out how to pass a single article - pass in ID
+    path('articles/', views.list_all_articles),
+    re_path(r'^articles/(?P<id>[0-9]+)/$', views.list_single_article_detail),
 ]

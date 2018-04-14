@@ -2,6 +2,7 @@ from rest_framework import serializers
 from dailybey.models import Article
 
 class ArticleSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True, required=False)
     title = serializers.CharField(max_length=100)
     date = serializers.DateField(required=False)
     time = serializers.TimeField(required=False)
@@ -19,6 +20,7 @@ class ArticleSerializer(serializers.Serializer):
         """
         Update and return an existing Article instance, given the validated data.
         """
+        instance.id = validated_data.get('id', instance.id)
         instance.title = validated_data.get('title', instance.title)
         instance.date = validated_data.get('date', instance.date)
         instance.time = validated_data.get('time', instance.time)
