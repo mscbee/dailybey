@@ -3,8 +3,8 @@ from dailybey.models import Article
 
 class ArticleSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
-    date = serializers.DateField()
-    time = serializers.TimeField()
+    date = serializers.DateField(required=False)
+    time = serializers.TimeField(required=False)
     body = serializers.CharField(max_length=5000)
    # image = serializers.ImageField(allow_empty_file=True)
     url = serializers.URLField(max_length=200)
