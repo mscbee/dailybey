@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from dailybey import views 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
+    path('articles/', views.list_all_articles, name='articles'),
+
+    # TODO: figure out how to pass a single article - pass in ID
 ]
