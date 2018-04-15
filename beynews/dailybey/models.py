@@ -10,3 +10,10 @@ class Article(models.Model):
    # image = models.ImageField(allow_empty_file=True)
     url = models.URLField(max_length=200)
 
+    def __str__(self):
+        """
+        Enables teach object to appear with its title name
+        instead of Article object(x)
+        """
+        return self.title
+
