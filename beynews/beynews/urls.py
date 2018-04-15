@@ -19,6 +19,6 @@ from dailybey import views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('articles/', views.list_all_articles),
+    re_path(r'^articles/$', views.list_all_articles),
     re_path(r'^articles/(?P<id>[0-9]+)/$', views.list_single_article_detail),
 ]
