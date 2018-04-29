@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'dailybey.apps.DailybeyConfig',
+    'dailybey',
 ]
 
 MIDDLEWARE = [
@@ -53,10 +53,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'beynews.urls'
 
+# Letting Django know where to find my templates
+SETTINGS_PATH = '/Users/cba50/Desktop/dailybey/beynews/dailybey/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [SETTINGS_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
